@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Catamaran', sans-serif;
+    
+}
+:root{
+    --green: #A0DB8E;
+    --green-light: #afea9e;
+    --grey: #C0C0C0;
+    --grey-light: #cecbcb;
+    --pink: #eed1c1;
+    --pink-light: #f4e8d8;
+    --coffee: #e3d298;
+    --coffee-light: #eedea5;
+    font-size: 16px;
+    
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    text-decoration: underline;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 40% 150px auto;
+    grid-template-rows: 40% 150px auto;
+    text-align: center;
+}
+main div{
+    cursor: pointer;
+}
+.about{
+    grid-column: 1/2;
+    grid-row: 1/3;
+    background: var(--green);
+    position: relative;
+}
+.about .shadowtxt{
+    color: var(--green-light);
+    display: block;
+    margin-top: 10%;
+}
+main div:hover span{
+     filter: blur(4px);
+    letter-spacing: 5px;
+}
+.projects{
+    grid-column: 2/4;
+    grid-row: 1/2;
+    background: var(--coffee);
+    position: relative;
+}
+.projects .shadowtxt{
+    color: var(--coffee-light);
+}
+main div:hover p, main div:hover ul{
+    opacity: 1;
+}
+.contact{
+    grid-column: 1/3;
+    grid-row: 3/4;
+    background: var(--pink);
+    position: relative;
+}
+.contact .shadowtxt{
+    color: var(--pink-light);
+}
+i{
+    margin-right: 10px;
+}
+
+.skills{
+    grid-column: 3/4;
+    grid-row: 2/4;
+    background: var(--grey);
+    position: relative;
+    
+}
+.skills .shadowtxt{
+    color: var(--grey-light);
+    display: block;
+    margin-top: 10%;
+}
+.logobox{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border-top: 75px solid var(--coffee);
+    border-left: 75px solid var(--green);
+    border-right: 75px solid var(--grey);
+    border-bottom: 75px solid var(--pink);
+    position: relative;
+}
+
+.logo{
+    font-size: 70px;
+    line-height: 150px;
+    letter-spacing: -20px;
+    z-index: 10;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border-radius: 50%;
+    background: #272c45;
+    color: beige;
+}
+.shadowtxt{
+    font-size: 11.7vw;
+    transition: 3s;
+}
+p, ul{
+    font-size: 22px;
+    line-height: 1.5;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .6s ease-in-out;
+    z-index: 11;
+    color: #272c45;
+}
+ul{
+    line-height: 2;
+}
+
+
+
+@media only screen and (max-width: 768px){
+
+    main{
+        display: block;
+        overflow: auto;
+    }
+    .about, .skills, .contact, .projects{
+        display: block;
+        height: calc(100vh/4);
+        position: relative;
+        transition: 1s ease-out;
+    }
+    .about:hover, .skills:hover{
+        height: 300px;
+    }
+    .shadowtxt{
+        font-size: 20vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .about .shadowtxt, .skills .shadowtxt{
+        margin: 0;
+    }
+    p, ul{
+        font-size: 16px;
+    }
+    .logobox{
+        display: none;
+    }
+    .logo{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 36px;
+        letter-spacing: -9px;
+        border-radius: 0 50% 50%;
+    }
+    
+}
